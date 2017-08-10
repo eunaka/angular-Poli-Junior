@@ -1,0 +1,34 @@
+<div class="page-header text-center">
+	<h1>{{foto.titulo}}</h1>
+</div>
+
+<form name="formulario" class="row" ng-submit="salvar()">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Título</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo">
+		</div>
+
+		<div class="form-group">
+			<label>URL</label>
+			<input name="url" class="form-control" ng-model="foto.url">
+		</div>
+
+		<div class="form-group">
+			<label>Descrição</label>
+			<textarea name="descricao" class="form-control" ng-model="foto.descricao"></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary">
+			Salvar
+		</button>
+
+		<a href="/home" class="btn btn-primary">Voltar</a>
+	</div>
+
+	<div class="col-md-6">
+		<meu-painel titulo="{{foto.titulo}}" legenda="{{foto.descricao}}">
+			<minha-foto titulo="{{foto.titulo}}" url="{{foto.url}}"></minha-foto>
+		</meu-painel>
+	</div>
+</form>

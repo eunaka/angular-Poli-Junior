@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Poli Júnior</h1>
+    </div>
+
+    <div class="row">
+        <form>
+            <a href="/home/new" class="btn btn-primary">Nova Foto</a>
+            <input class="form-control" placeholder="filtrar por figura" ng-model="filtro" ng-model-options="{debounce: 300}">
+        </form>
+    </div>
+    <div class="row">    
+        <meu-painel class="col-md-2 painel-animado" titulo="{{foto.titulo}}" ng-repeat="foto in fotos | filter: filtro">
+            <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+        </meu-painel>
+    </div>
+</div> <!-- fim container -->
